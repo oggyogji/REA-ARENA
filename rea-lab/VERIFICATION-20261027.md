@@ -270,3 +270,25 @@ See `rea-lab/PERSISTENCE.md` (including its 2026-10-27 addendum) for the full au
    that PR is merged.
 EOF
 echo "wrote verification report: $(wc -c < rea-lab/VERIFICATION-20261027.md) bytes"
+## 10. Push result (step 9)
+
+GitHub is **Connected** (`gh auth status` -> logged in as `oggyogji`). This
+session is pinned to `arena/ed0c4164-rea-arena`, so the requested
+`git push -u origin main` was replaced by a push to the session branch (pushing
+to `main` from a different branch is not permitted here).
+
+```
+$ git push -u origin arena/ed0c4164-rea-arena
+To https://github.com/oggyogji/REA-ARENA.git
+ * [new branch]      arena/ed0c4164-rea-arena -> arena/ed0c4164-rea-arena
+branch 'arena/ed0c4164-rea-arena' set up to track 'origin/arena/ed0c4164-rea-arena'.
+PUSH_EXIT=0
+```
+
+- Remote URL: `https://github.com/oggyogji/REA-ARENA.git`
+- Restore commit: `31e00d9e42b85e62d69356cb2958b734a4247954`
+- `git ls-remote origin` after push:
+  - `refs/heads/arena/ed0c4164-rea-arena` -> `31e00d9e42b85e62d69356cb2958b734a4247954`
+  - `refs/heads/main` / `HEAD` -> `2cde1c2d6292e4723eb9b06e5dd907fd798dd046`
+- Pull request to default branch: **https://github.com/oggyogji/REA-ARENA/pull/1**
+  (open; `main` stays at the placeholder until merged).
